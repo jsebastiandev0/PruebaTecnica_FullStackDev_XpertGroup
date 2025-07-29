@@ -12,19 +12,18 @@ services:
     networks:
       - app-network
 
-  # Service2 (cuando esté listo)
-  # service2:
-  #   build:
-  #     context: ./Service2
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "3001:3001"
-  #   environment:
-  #     - NODE_ENV=production
-  #     - PORT=3001
-  #   restart: unless-stopped
-  #   networks:
-  #     - app-network
+  service2:
+    build:
+      context: ./Service2
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    restart: unless-stopped
+    networks:
+      - app-network
 
   # WebApp (cuando esté listo)
   # webapp:
