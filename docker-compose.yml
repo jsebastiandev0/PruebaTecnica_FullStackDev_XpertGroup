@@ -1,0 +1,44 @@
+services:
+  service1:
+    build:
+      context: ./Service1
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  # Service2 (cuando esté listo)
+  # service2:
+  #   build:
+  #     context: ./Service2
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3001:3001"
+  #   environment:
+  #     - NODE_ENV=production
+  #     - PORT=3001
+  #   restart: unless-stopped
+  #   networks:
+  #     - app-network
+
+  # WebApp (cuando esté listo)
+  # webapp:
+  #   build:
+  #     context: ./WebApp
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - service1
+  #   restart: unless-stopped
+  #   networks:
+  #     - app-network
+
+networks:
+  app-network:
+    driver: bridge
