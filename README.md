@@ -126,6 +126,10 @@ docker build -t webapp ./WebApp
 - `GET /` - Información del servicio
 - `GET /health` - Estado de salud
 
+<!-- 
+Esta sección describe las características principales de la WebApp, así como aspectos de seguridad, monitoreo y despliegue. 
+
+
 ## 🎨 Características de la WebApp
 
 - **Interfaz Moderna**: Diseño responsivo con gradientes y efectos visuales
@@ -167,3 +171,6 @@ docker-compose up
 # Reconstruir después de cambios
 docker-compose up --build
 ```
+
+
+-->
