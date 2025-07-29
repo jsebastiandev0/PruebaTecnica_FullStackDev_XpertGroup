@@ -25,18 +25,18 @@ services:
     networks:
       - app-network
 
-  # WebApp (cuando esté listo)
-  # webapp:
-  #   build:
-  #     context: ./WebApp
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "80:80"
-  #   depends_on:
-  #     - service1
-  #   restart: unless-stopped
-  #   networks:
-  #     - app-network
+  webapp:
+    build:
+      context: ./WebApp
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - service1
+      - service2
+    restart: unless-stopped
+    networks:
+      - app-network
 
 networks:
   app-network:
